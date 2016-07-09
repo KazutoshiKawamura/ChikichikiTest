@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     var number: Int = 0
     @IBOutlet var label: UILabel!
-    @IBOutlet var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +21,21 @@ class ViewController: UIViewController {
     @IBAction func plus() {
         number = number + 1
 //        label.text = String(number)
+        
         if number%2 == 0 {
             label.text = "(」・ω・)」うー！"
         } else {
             label.text = "(／・ω・)／にゃー！"
         }
+        
         if number > 30 {
             label.text = "(＿・ω・)＿つかれた..."
         }
+    }
+    
+    @IBAction func reset() {
+        number = 0
+        label.text = "(」・ω・)」ふっかつ！"
     }
 
     override func didReceiveMemoryWarning() {
